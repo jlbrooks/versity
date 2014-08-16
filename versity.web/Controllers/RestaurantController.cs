@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using versity.data.DataAccess;
+using versity.data.Models;
 
 namespace versity.Controllers
 {
@@ -14,10 +15,12 @@ namespace versity.Controllers
             _store = store;
         }
 
-        // GET: Restaurant
+        // GET: Restaurants
         public ActionResult Index()
         {
-            return View(_store.All());
+            var list = new List<Restaurant>();
+            list.Add(new Restaurant { Name = "foo", PhoneNumber = "bar" });
+            return View(list);
         }
 
         private readonly IRestaurantStore _store;

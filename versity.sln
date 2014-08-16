@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "versity.web", "versity\versity.web.csproj", "{57DC63A8-CF1C-4213-833E-6D52B50BE5B5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "versity.web", "versity.web\versity.web.csproj", "{57DC63A8-CF1C-4213-833E-6D52B50BE5B5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{71DC1171-E7F1-490E-AD5F-D70343E84250}"
 	ProjectSection(SolutionItems) = preProject

@@ -5,6 +5,9 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using System.Data.Entity;
+using versity.data.DataAccess.EntityFramework;
+using versity.data.Migrations;
 
 namespace versity
 {
@@ -16,6 +19,8 @@ namespace versity
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<VersityDbContext, Configuration>());
         }
     }
 }

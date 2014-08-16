@@ -87,6 +87,9 @@
     <Reference Include="Ninject.Web.Mvc">
       <HintPath>..\packages\Ninject.MVC5.3.2.1.0\lib\net45-full\Ninject.Web.Mvc.dll</HintPath>
     </Reference>
+    <Reference Include="NSubstitute">
+      <HintPath>..\packages\NSubstitute.1.7.2.0\lib\NET45\NSubstitute.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.core">
       <HintPath>..\packages\NUnitTestAdapter.1.1\lib\nunit.core.dll</HintPath>
       <Private>False</Private>
@@ -156,6 +159,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="App_Start\NinjectWebCommon.cs" />
+    <Compile Include="Controllers\RestaurantControllerTests.cs" />
     <Compile Include="Controllers\HomeControllerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -164,6 +168,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\versity.data\versity.data.csproj">
+      <Project>{72d3fcdb-bd74-4c6c-8073-8f47d2bfd00a}</Project>
+      <Name>versity.data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\versity.web\versity.web.csproj">
       <Project>{57dc63a8-cf1c-4213-833e-6d52b50be5b5}</Project>
       <Name>versity.web</Name>

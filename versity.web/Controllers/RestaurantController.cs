@@ -18,9 +18,7 @@ namespace versity.Controllers
         // GET: Restaurants
         public ActionResult Index()
         {
-            var list = new List<Restaurant>();
-            list.Add(new Restaurant { Name = "foo", PhoneNumber = "bar" });
-            return View(list);
+            return View(_store.All());
         }
 
         private readonly IRestaurantStore _store;

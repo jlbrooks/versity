@@ -84,6 +84,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
@@ -105,6 +106,8 @@
   </Choose>
   <ItemGroup>
     <Compile Include="App_Start\NinjectWebCommon.cs" />
+    <Compile Include="DataAccess\DatabaseTest.cs" />
+    <Compile Include="DataAccess\RestaurantStoreTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -112,8 +115,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DataAccess\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\versity.data\versity.data.csproj">
+      <Project>{72d3fcdb-bd74-4c6c-8073-8f47d2bfd00a}</Project>
+      <Name>versity.data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\versity.web\versity.web.csproj">
+      <Project>{57dc63a8-cf1c-4213-833e-6d52b50be5b5}</Project>
+      <Name>versity.web</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

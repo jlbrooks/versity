@@ -62,7 +62,6 @@ namespace versity.Controllers
                 return View(restaurant);
             _store.Update(restaurant);
             return RedirectToAction("Index");
-            
         }
 
         private readonly IRestaurantStore _store;

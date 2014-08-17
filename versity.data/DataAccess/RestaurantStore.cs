@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using versity.data.DataAccess.EntityFramework;
 using versity.data.Models;
+using System.Data.Entity;
 
 namespace versity.data.DataAccess
 {
@@ -32,6 +33,7 @@ namespace versity.data.DataAccess
 
         public void Update(Restaurant restaurant)
         {
+            _context.Entry(restaurant).State = EntityState.Modified;
             _context.SaveChanges();
         }
 

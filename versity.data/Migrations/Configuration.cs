@@ -19,7 +19,8 @@ namespace versity.data.Migrations
                 new Restaurant
                 {
                     Name = "Chipotle",
-                    PhoneNumber = "123-456-7890"
+                    PhoneNumber = "123-456-7890",
+                    Address = "101010 Foo Avenue"
                 });
         }
     }

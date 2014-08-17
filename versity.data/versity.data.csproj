@@ -120,6 +120,9 @@
     <EmbeddedResource Include="Migrations\201408160004004_initial.resx">
       <DependentUpon>201408160004004_initial.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201408170049370_add_address_to_restaurant.resx">
+      <DependentUpon>201408170049370_add_address_to_restaurant.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataAccess\IRestaurantStore.cs" />
@@ -128,6 +131,10 @@
     <Compile Include="Migrations\201408160004004_initial.cs" />
     <Compile Include="Migrations\201408160004004_initial.Designer.cs">
       <DependentUpon>201408160004004_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201408170049370_add_address_to_restaurant.cs" />
+    <Compile Include="Migrations\201408170049370_add_address_to_restaurant.Designer.cs">
+      <DependentUpon>201408170049370_add_address_to_restaurant.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Restaurant.cs" />

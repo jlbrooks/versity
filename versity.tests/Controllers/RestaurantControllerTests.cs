@@ -68,6 +68,14 @@ namespace versity.tests.Controllers
             _thenResult.As<ViewResult>().ViewData.Model.Should().Equals(_someRestaurant);
         }
 
+        [Test]
+        public void DeleteShouldRedirect()
+        {
+            givenRestaurant(_someRestaurant);
+            whenPostDelete(-1);
+            _thenResult.Should().BeOfType<RedirectToRouteResult>();
+        }
+
         private void givenRestaurant(Restaurant restaurant)
         {
             _restaurantStore.GetByRestaurantID(restaurant.ID).Returns(restaurant);
@@ -80,6 +88,11 @@ namespace versity.tests.Controllers
         private void whenGetEdit(int id)
         {
             _thenResult = _controller.Edit(id);
+        }
+
+        private void whenPostDelete(int id)
+        {
+            _thenResult = _controller.Delete(id);
         }
 
         private void whenGetNew()

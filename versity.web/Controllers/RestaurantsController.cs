@@ -64,6 +64,13 @@ namespace versity.Controllers
             return RedirectToAction("Index");
         }
 
+        // Post: Restaurants/delete/id
+        public ActionResult Delete(int id)
+        {
+            _store.Remove(id);
+            return RedirectToAction("Index");
+        }
+
         private readonly IRestaurantStore _store;
     }
 }

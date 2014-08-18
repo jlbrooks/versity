@@ -71,6 +71,15 @@ namespace versity.Controllers
             return RedirectToAction("Index");
         }
 
+        // Get: Restaurants/details/id
+        public ActionResult Details(int id)
+        {
+            var restaurant = _store.GetByRestaurantID(id);
+            if (restaurant == null)
+                return RedirectToAction("Index");
+            return View(restaurant);
+        }
+
         private readonly IRestaurantStore _store;
     }
 }

@@ -76,6 +76,22 @@ namespace versity.tests.Controllers
             _thenResult.Should().BeOfType<RedirectToRouteResult>();
         }
 
+        [Test]
+        public void DetailsShouldReadirectOnBadId()
+        {
+            whenGetDetails(5);
+            _thenResult.Should().BeOfType<RedirectToRouteResult>();
+        }
+
+        [Test]
+        public void DetailsShouldReturnView()
+        {
+            givenRestaurant(_someRestaurant);
+            whenGetEdit(-1);
+            _thenResult.Should().BeOfType<ViewResult>();
+            _thenResult.As<ViewResult>().ViewData.Model.Should().Equals(_someRestaurant);
+        }
+
         private void givenRestaurant(Restaurant restaurant)
         {
             _restaurantStore.GetByRestaurantID(restaurant.ID).Returns(restaurant);
@@ -103,6 +119,11 @@ namespace versity.tests.Controllers
         private void whenIndexIsCalled()
         {
             _thenResult = _controller.Index();
+        }
+
+        private void whenGetDetails(int id)
+        {
+            _thenResult = _controller.Details(id);
         }
 
         private static readonly List<Restaurant> _someData = new List<Restaurant> {_someRestaurant };

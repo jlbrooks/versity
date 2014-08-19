@@ -18,6 +18,7 @@ namespace versity.data.DataAccess.EntityFramework
         }
 
         public DbSet<Restaurant> Restaurants { get; set; }
+        public DbSet<Menu> Menus { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

@@ -4,29 +4,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace versity.data.Models
 {
-    public class Restaurant
+    public class Menu
     {
-        public Restaurant()
-        {
-            Menus = new List<Menu>();
-        }
-
         [Key]
         public int ID { get; set; }
 
         [Required]
+        [ForeignKey("Restaurant")]
+        public int RestaurantID { get; set; }
+
+        public virtual Restaurant Restaurant { get; set; }
+        
+        [Required]
         [Display(Name = "Name")]
         public string Name { get; set; }
 
-        [Display(Name = "Phone Number")]
-        public string PhoneNumber { get; set; }
-
-        [Display(Name = "Address")]
-        public string Address { get; set; }
-
-        public virtual ICollection<Menu> Menus { get; set; }
+        [Display(Name = "Active")]
+        public bool Active { get; set; }
     }
 }

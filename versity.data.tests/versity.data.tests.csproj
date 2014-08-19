@@ -107,6 +107,7 @@
   <ItemGroup>
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="DataAccess\DatabaseTest.cs" />
+    <Compile Include="DataAccess\MenuStoreTests.cs" />
     <Compile Include="DataAccess\RestaurantStoreTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

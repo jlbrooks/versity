@@ -126,9 +126,14 @@
     <EmbeddedResource Include="Migrations\201408171143095_restaurant_dataAnnotations.resx">
       <DependentUpon>201408171143095_restaurant_dataAnnotations.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201408181950157_add_menus_to_restaurant.resx">
+      <DependentUpon>201408181950157_add_menus_to_restaurant.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataAccess\IMenuStore.cs" />
     <Compile Include="DataAccess\IRestaurantStore.cs" />
+    <Compile Include="DataAccess\MenuStore.cs" />
     <Compile Include="DataAccess\RestaurantStore.cs" />
     <Compile Include="DataAccess\EntityFramework\VersityDbContext.cs" />
     <Compile Include="Migrations\201408160004004_initial.cs" />
@@ -143,7 +148,12 @@
     <Compile Include="Migrations\201408171143095_restaurant_dataAnnotations.Designer.cs">
       <DependentUpon>201408171143095_restaurant_dataAnnotations.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201408181950157_add_menus_to_restaurant.cs" />
+    <Compile Include="Migrations\201408181950157_add_menus_to_restaurant.Designer.cs">
+      <DependentUpon>201408181950157_add_menus_to_restaurant.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Menu.cs" />
     <Compile Include="Models\Restaurant.cs" />
   </ItemGroup>
   <ItemGroup>

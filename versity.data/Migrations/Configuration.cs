@@ -20,7 +20,15 @@ namespace versity.data.Migrations
                 {
                     Name = "Chipotle",
                     PhoneNumber = "123-456-7890",
-                    Address = "101010 Foo Avenue"
+                    Address = "101010 Foo Avenue",
+                    ID = 1
+                });
+            context.Menus.AddOrUpdate(p => p.Name,
+                new Menu
+                {
+                    Name = "Main menu",
+                    Active = true,
+                    RestaurantID = 1
                 });
         }
     }

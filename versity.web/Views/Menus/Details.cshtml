@@ -1,0 +1,44 @@
+﻿@model versity.data.Models.Menu
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Menu</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Restaurant Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Restaurant.Name)
+        </dd>
+
+        <dt>
+            Menu name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Active)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Active)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { menuId = Model.ID }) |
+    @Html.ActionLink("Back to Restaurant", "Details", "Restaurants", new { id = Model.RestaurantID }, new { }) |
+    @Html.ActionLink("Delete", "Delete", "Menus", new { menuId = Model.ID }, new { })
+</p>

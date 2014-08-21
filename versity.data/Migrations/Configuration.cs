@@ -28,7 +28,8 @@ namespace versity.data.Migrations
                 {
                     Name = "Main menu",
                     Active = true,
-                    RestaurantID = 1
+                    RestaurantID = 1,
+                    ID = 1
                 });
         }
     }

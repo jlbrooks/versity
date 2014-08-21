@@ -31,6 +31,15 @@ namespace versity.data.Migrations
                     RestaurantID = 1,
                     ID = 1
                 });
+            context.Items.AddOrUpdate(p => p.Name,
+                new Item
+                {
+                    Name = "Meat",
+                    ID = 1,
+                    MenuID = 1,
+                    Cost = 6.50M,
+                    Category = Category.Entrees
+                });
         }
     }
 }

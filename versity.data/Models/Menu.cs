@@ -10,6 +10,11 @@ namespace versity.data.Models
 {
     public class Menu
     {
+        public Menu()
+        {
+            Items = new List<Item>();
+        }
+
         [Key]
         public int ID { get; set; }
 
@@ -25,5 +30,7 @@ namespace versity.data.Models
 
         [Display(Name = "Active")]
         public bool Active { get; set; }
+
+        public virtual ICollection<Item> Items { get; set; }
     }
 }

@@ -39,6 +39,7 @@
 </div>
 <div>
     <h4>Menus</h4>
+    @Html.ActionLink("New Menu", "New", "Menus", new { restaurantId = Model.ID }, new { })
     <table class="table-bordered">
         <tr>
             <th>Name</th>
@@ -52,7 +53,6 @@
             </tr>
         }
     </table>
-    @Html.ActionLink("New Menu", "New", "Menus", new { restaurantId = Model.ID }, new { })
 </div>
 <p style="margin-top: 20px">
     @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |

@@ -1,4 +1,5 @@
 ﻿@model versity.data.Models.Menu
+@using versity.data.Models
 
 @{
     ViewBag.Title = "Details";
@@ -37,8 +38,28 @@
 
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { menuId = Model.ID }) |
+
+<div>
+    <h4>Menu Items</h4>
+    @Html.ActionLink("Add item", "Create", "Items", new { menuId = Model.ID }, new { })
+    <table class="table-bordered">
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Category</th>
+        </tr>
+        @foreach (Item item in Model.Items)
+        {   
+            <tr>
+                <td>@Html.ActionLink(@item.Name, "Edit", "Items", new {id = @item.ID}, new {})</td>
+                <td>@item.Cost</td>
+                <td>@item.Category</td>
+            </tr>
+        }
+    </table>
+</div>
+<p style="margin-top: 30px;">
+    @Html.ActionLink("Edit Menu", "Edit", new { menuId = Model.ID }) |
     @Html.ActionLink("Back to Restaurant", "Details", "Restaurants", new { id = Model.RestaurantID }, new { }) |
-    @Html.ActionLink("Delete", "Delete", "Menus", new { menuId = Model.ID }, new { })
+    @Html.ActionLink("Delete Menu", "Delete", "Menus", new { menuId = Model.ID }, new { })
 </p>

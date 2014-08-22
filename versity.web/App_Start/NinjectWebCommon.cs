@@ -48,6 +48,7 @@ namespace versity.App_Start
                 kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
                 kernel.Bind<IRestaurantStore>().To<RestaurantStore>();
                 kernel.Bind<IMenuStore>().To<MenuStore>();
+                kernel.Bind<IItemStore>().To<ItemStore>();
 
                 RegisterServices(kernel);
                 return kernel;

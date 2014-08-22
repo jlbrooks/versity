@@ -39,11 +39,16 @@
 </div>
 <div>
     <h4>Menus</h4>
-    <table>
+    <table class="table-bordered">
+        <tr>
+            <th>Name</th>
+            <th>Active?</th>
+        </tr>
         @foreach (Menu menu in Model.Menus)
         {
             <tr>
                 <td>@Html.ActionLink(@menu.Name, "Details", "Menus", new { menuId = @menu.ID }, new {})</td>
+                <td>@menu.Active</td>
             </tr>
         }
     </table>

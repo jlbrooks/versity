@@ -135,6 +135,9 @@
     <EmbeddedResource Include="Migrations\201408212202577_remove_categories_add_items.resx">
       <DependentUpon>201408212202577_remove_categories_add_items.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409051734321_add_description_to_item.resx">
+      <DependentUpon>201409051734321_add_description_to_item.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataAccess\IItemStore.cs" />
@@ -167,6 +170,10 @@
     <Compile Include="Migrations\201408212202577_remove_categories_add_items.cs" />
     <Compile Include="Migrations\201408212202577_remove_categories_add_items.Designer.cs">
       <DependentUpon>201408212202577_remove_categories_add_items.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201409051734321_add_description_to_item.cs" />
+    <Compile Include="Migrations\201409051734321_add_description_to_item.Designer.cs">
+      <DependentUpon>201409051734321_add_description_to_item.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Item.cs" />

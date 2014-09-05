@@ -38,6 +38,7 @@ namespace versity.data.Migrations
                     ID = 1,
                     MenuID = 1,
                     Cost = 6.50M,
+                    Description = "This is some nice looking meat you got there",
                     Category = Category.Entrees
                 });
         }

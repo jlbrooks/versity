@@ -25,6 +25,8 @@ namespace versity.data.Models
         [Required]
         public decimal Cost { get; set; }
 
+        public string Description { get; set; }
+
         public Category Category { get; set; }
     }
 

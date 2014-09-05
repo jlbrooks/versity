@@ -47,7 +47,7 @@ namespace versity.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,MenuID,Name,Cost,Category")] Item item)
+        public ActionResult Create([Bind(Include = "ID,MenuID,Name,Cost,Category,Description")] Item item)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace versity.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,MenuID,Name,Cost,Category")] Item item)
+        public ActionResult Edit([Bind(Include = "ID,MenuID,Name,Cost,Category,Description")] Item item)
         {
             if (ModelState.IsValid)
             {

@@ -6,10 +6,9 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<h2>Details - @Model.Restaurant.Name @Model.Name</h2>
 
 <div>
-    <h4>Menu</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -47,6 +46,7 @@
             <th>Name</th>
             <th>Price</th>
             <th>Category</th>
+            <th>Description</th>
         </tr>
         @foreach (Item item in Model.Items)
         {   
@@ -54,6 +54,7 @@
                 <td>@Html.ActionLink(@item.Name, "Edit", "Items", new {id = @item.ID}, new {})</td>
                 <td>@item.Cost</td>
                 <td>@item.Category</td>
+                <td>@item.Description</td>
             </tr>
         }
     </table>

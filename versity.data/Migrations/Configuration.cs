@@ -18,7 +18,7 @@ namespace versity.data.Migrations
             context.Restaurants.AddOrUpdate(p => p.Name,
                 new Restaurant
                 {
-                    Name = "Chipotle",
+                    Name = "Test Restaurant",
                     PhoneNumber = "123-456-7890",
                     Address = "101010 Foo Avenue",
                     ID = 1

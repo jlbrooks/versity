@@ -112,6 +112,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.2\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="System.XML" />
     <Reference Include="WebActivatorEx">
       <HintPath>..\packages\WebActivatorEx.2.0\lib\net40\WebActivatorEx.dll</HintPath>
     </Reference>
@@ -137,6 +138,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201409051734321_add_description_to_item.resx">
       <DependentUpon>201409051734321_add_description_to_item.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409052205459_add_hours_to_restaurant.resx">
+      <DependentUpon>201409052205459_add_hours_to_restaurant.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -175,7 +179,12 @@
     <Compile Include="Migrations\201409051734321_add_description_to_item.Designer.cs">
       <DependentUpon>201409051734321_add_description_to_item.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201409052205459_add_hours_to_restaurant.cs" />
+    <Compile Include="Migrations\201409052205459_add_hours_to_restaurant.Designer.cs">
+      <DependentUpon>201409052205459_add_hours_to_restaurant.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Hours.cs" />
     <Compile Include="Models\Item.cs" />
     <Compile Include="Models\Menu.cs" />
     <Compile Include="Models\Restaurant.cs" />

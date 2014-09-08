@@ -41,6 +41,15 @@ namespace versity.data.Migrations
                     Description = "This is some nice looking meat you got there",
                     Category = Category.Entrees
                 });
+            context.Hours.AddOrUpdate(p => p.ID,
+                new Hours
+                {
+                    ID = 1,
+                    RestaurantID = 1,
+                    Day = DayOfWeek.Monday,
+                    Open = new TimeSpan(8, 30, 0),
+                    Closed = new TimeSpan(9, 0, 0)
+                });
         }
     }
 }

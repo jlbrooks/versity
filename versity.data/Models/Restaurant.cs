@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace versity.data.Models
 {
@@ -12,6 +13,7 @@ namespace versity.data.Models
         public Restaurant()
         {
             Menus = new List<Menu>();
+            Hours = new List<Hours>();
         }
 
         [Key]
@@ -26,6 +28,8 @@ namespace versity.data.Models
 
         [Display(Name = "Address")]
         public string Address { get; set; }
+
+        public virtual ICollection<Hours> Hours { get; set; }
 
         public virtual ICollection<Menu> Menus { get; set; }
     }

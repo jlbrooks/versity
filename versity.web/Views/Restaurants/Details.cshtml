@@ -53,6 +53,26 @@
         }
     </table>
 </div>
+
+<div>
+    <h4>Hours</h4>
+    @Html.ActionLink("New Hours", "Create", "Hours", new { restaurantId = Model.ID }, new { })
+    <table class="table-bordered">
+        <tr>
+            <th>Day</th>
+            <th>Open</th>
+            <th>Closed</th>
+        </tr>
+        @foreach (Hours hour in Model.Hours)
+        {
+            <tr>
+                <td>@Html.ActionLink(@hour.Day.ToString(), "Edit", "Hours", new {id = @hour.ID}, new{})</td>
+                <td>@hour.Open</td>
+                <td>@hour.Closed</td>
+            </tr>
+        }
+    </table>
+</div>
 <p style="margin-top: 20px">
     @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
     @Html.ActionLink("Back to List", "Index")

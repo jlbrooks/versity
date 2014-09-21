@@ -23,33 +23,6 @@ namespace versity.data.Migrations
                     Address = "101010 Foo Avenue",
                     ID = 1
                 });
-            context.Menus.AddOrUpdate(p => p.Name,
-                new Menu
-                {
-                    Name = "Main menu",
-                    Active = true,
-                    RestaurantID = 1,
-                    ID = 1
-                });
-            context.Items.AddOrUpdate(p => p.Name,
-                new Item
-                {
-                    Name = "Meat",
-                    ID = 1,
-                    MenuID = 1,
-                    Cost = 6.50M,
-                    Description = "This is some nice looking meat you got there",
-                    Category = Category.Entrees
-                });
-            context.Hours.AddOrUpdate(p => p.ID,
-                new Hours
-                {
-                    ID = 1,
-                    RestaurantID = 1,
-                    Day = DayOfWeek.Monday,
-                    Open = new TimeSpan(8, 30, 0),
-                    Closed = new TimeSpan(9, 0, 0)
-                });
         }
     }
 }

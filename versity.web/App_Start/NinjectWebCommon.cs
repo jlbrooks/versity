@@ -49,6 +49,7 @@ namespace versity.App_Start
                 kernel.Bind<IRestaurantStore>().To<RestaurantStore>();
                 kernel.Bind<IMenuStore>().To<MenuStore>();
                 kernel.Bind<IItemStore>().To<ItemStore>();
+                kernel.Bind<IHoursStore>().To<HoursStore>();
 
                 RegisterServices(kernel);
                 return kernel;

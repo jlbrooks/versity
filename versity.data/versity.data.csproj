@@ -144,6 +144,8 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataAccess\HoursStore.cs" />
+    <Compile Include="DataAccess\IHoursStore.cs" />
     <Compile Include="DataAccess\IItemStore.cs" />
     <Compile Include="DataAccess\IMenuStore.cs" />
     <Compile Include="DataAccess\IRestaurantStore.cs" />

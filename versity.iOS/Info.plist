@@ -3,24 +3,22 @@
 <plist version="1.0">
   <dict>
     <key>CFBundleDisplayName</key>
-    <string>versity.iOS</string>
+    <string>versity.ios</string>
     <key>CFBundleIdentifier</key>
-    <string>com.your-company.versity.iOS</string>
+    <string>com.your-company.versity.ios</string>
     <key>CFBundleShortVersionString</key>
     <string>1.0</string>
     <key>CFBundleVersion</key>
     <string>1.0</string>
-    <key>UIDeviceFamily</key>
-    <array>
-      <integer>1</integer>
-    </array>
     <key>UISupportedInterfaceOrientations</key>
     <array>
       <string>UIInterfaceOrientationPortrait</string>
       <string>UIInterfaceOrientationLandscapeLeft</string>
       <string>UIInterfaceOrientationLandscapeRight</string>
     </array>
+    <key>UIMainStoryboardFile</key>
+    <string>MainStoryboard</string>
     <key>MinimumOSVersion</key>
-    <string>3.2</string>
+    <string>7.0</string>
   </dict>
 </plist>

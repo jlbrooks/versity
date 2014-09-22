@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("versity.iOS")]
+[assembly: AssemblyTitle("versity.ios")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("versity.iOS")]
+[assembly: AssemblyProduct("versity.ios")]
 [assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("0285cde7-cc18-44d6-a60e-fcea34399de0")]
+[assembly: Guid("6a383e4f-9c4a-44a0-baee-dcb8e8be467f")]
 
 // Version information for an assembly consists of the following four values:
 //

@@ -137,7 +137,7 @@ namespace versity.data.tests.DataAccess
 
 
         private Item ThenItem { get; set; }
-        private IQueryable<Item> ThenItems { get; set; }
+        private List<Item> ThenItems { get; set; }
         private IItemStore _ItemStore;
         private Item SomeItem;
         private Item AnotherItem;

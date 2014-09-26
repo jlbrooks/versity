@@ -59,9 +59,9 @@ namespace versity.data.tests.DataAccess
             {
                 Context.SaveChanges();
             }
-            catch
+            catch (Exception e)
             {
-                throw new Exception();
+                throw e;
             }
         }
 

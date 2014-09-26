@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using versity.data.DataAccess.EntityFramework;
 using versity.data.Models;
 using versity.data.DataAccess;
+using System.Web.Script.Serialization;
 
 namespace versity.Controllers
 {
@@ -18,6 +19,7 @@ namespace versity.Controllers
         public ItemsController(IItemStore store)
         {
             _store = store;
+            _jss = new JavaScriptSerializer();
         }
 
         // GET: Items/Details/5
@@ -98,6 +100,14 @@ namespace versity.Controllers
             return RedirectToAction("Details", "Menus", new { menuId = item.MenuID });
         }
 
+        public JsonResult SearchBudget(decimal budget)
+        {
+            var items = _store.GetUnderPrice(budget);
+            var json = _jss.Serialize(items);
+            return new JsonResult { Data = items };
+        }
+
         private readonly IItemStore _store;
+        private readonly JavaScriptSerializer _jss;
     }
 }

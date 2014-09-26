@@ -13,5 +13,6 @@ namespace versity.data.DataAccess
         void Update(Item Item);
         void Add(Item Item);
         void Remove(int id);
+        List<Item> GetUnderPrice(decimal price);
     }
 }

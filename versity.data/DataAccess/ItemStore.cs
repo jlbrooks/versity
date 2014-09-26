@@ -48,6 +48,11 @@ namespace versity.data.DataAccess
             }
         }
 
+        public List<Item> GetUnderPrice(decimal price)
+        {
+            return _context.Items.Where(x => x.Cost <= price).ToList();
+        }
+
         private readonly VersityDbContext _context;
     }
 }

@@ -3,9 +3,9 @@
 <plist version="1.0">
   <dict>
     <key>CFBundleDisplayName</key>
-    <string>versity.ios</string>
+    <string>versity.mobile.ios</string>
     <key>CFBundleIdentifier</key>
-    <string>com.your-company.versity.ios</string>
+    <string>com.your-company.versity.mobile.ios</string>
     <key>CFBundleShortVersionString</key>
     <string>1.0</string>
     <key>CFBundleVersion</key>

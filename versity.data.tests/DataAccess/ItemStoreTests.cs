@@ -21,13 +21,20 @@ namespace versity.data.tests.DataAccess
         {
             base.setup();
             _ItemStore = new ItemStore(TestDbContext);
+            SetupData();
             ThenItem = null;
+        }
+
+        [TearDown]
+        protected override void teardown()
+        {
+            base.teardown();
         }
 
         [Test]
         public void ShouldAddAndUpdateItem()
         {
-            var Item = new Item { Name = "bar", Cost = 6.50M, ID = 2, MenuID = 1 };
+            var Item = new Item { Name = "bar", Cost = 6.50M, MenuID = ParentMenu.ID };
             WhenAdd(Item);
             WhenGet(Item.ID);
             ThenItem.Name.Should().Be("bar");
@@ -62,10 +69,50 @@ namespace versity.data.tests.DataAccess
             ThenItem.Should().BeNull();
         }
 
+        [Test]
+        public void ShouldGetItemsUnderBudget()
+        {
+            GivenItemInContext(SomeItem);
+            GivenItemInContext(AnotherItem);
+            WhenGetWithBudget(7.00M);
+            ThenItems.Should().Contain(SomeItem);
+            ThenItems.Should().NotContain(AnotherItem);
+        }
+
+        private void SetupData()
+        {
+            TestDbContext.Restaurants.Add(ParentRestaurant);
+            SaveAndValidate();
+            ParentMenu.RestaurantID = ParentRestaurant.ID;
+            TestDbContext.Menus.Add(ParentMenu);
+            SaveAndValidate();
+
+            SomeItem = new Item
+            {
+                MenuID = ParentMenu.ID,
+                Name = "foo",
+                Cost = 6.50M,
+                Category = Category.Entrees
+            };
+
+            AnotherItem = new Item
+            {
+                MenuID = ParentMenu.ID,
+                Name = "bar",
+                Cost = 8.50M,
+                Category = Category.Entrees
+            };
+        }
+
         private void GivenItemInContext(Item Item)
         {
             TestDbContext.Items.Add(Item);
             SaveAndValidate();
+        }
+
+        private void WhenGetWithBudget(decimal budget)
+        {
+            ThenItems = _ItemStore.GetUnderPrice(budget);
         }
 
         private void WhenRemove(int id)
@@ -90,14 +137,12 @@ namespace versity.data.tests.DataAccess
 
 
         private Item ThenItem { get; set; }
+        private IQueryable<Item> ThenItems { get; set; }
         private IItemStore _ItemStore;
-        private static readonly Item SomeItem = new Item
-        {
-            ID = 6,
-            MenuID = 1,
-            Name = "foo",
-            Cost = 6.50M,
-            Category = Category.Entrees
-        };
+        private Item SomeItem;
+        private Item AnotherItem;
+
+        private static readonly Restaurant ParentRestaurant = new Restaurant { Name = "foo" };
+        private Menu ParentMenu = new Menu { Name = "bar" };
     }
 }

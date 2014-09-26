@@ -21,13 +21,14 @@ namespace versity.data.tests.DataAccess
         {
             base.setup();
             _MenuStore = new MenuStore(TestDbContext);
+            SetupData();
             ThenMenu = null;
         }
 
         [Test]
         public void ShouldAddAndUpdateMenu()
         {
-            var Menu = new Menu { Name = "bar", ID = 2, RestaurantID = 1 };
+            var Menu = new Menu { Name = "bar", ID = 28, RestaurantID = ParentRestaurant.ID };
             WhenAdd(Menu);
             WhenGet(Menu.ID);
             ThenMenu.Name.Should().Be("bar");
@@ -62,6 +63,20 @@ namespace versity.data.tests.DataAccess
             ThenMenu.Should().BeNull();
         }
 
+        private void SetupData()
+        {
+            TestDbContext.Restaurants.Add(ParentRestaurant);
+            SaveAndValidate();
+
+            SomeMenu = new Menu
+            {
+                ID = 1,
+                Name = "foo",
+                Active = true,
+                RestaurantID = ParentRestaurant.ID
+            };
+        }
+
         private void GivenMenuInContext(Menu Menu)
         {
             TestDbContext.Menus.Add(Menu);
@@ -91,12 +106,7 @@ namespace versity.data.tests.DataAccess
 
         private Menu ThenMenu { get; set; }
         private IMenuStore _MenuStore;
-        private static readonly Menu SomeMenu = new Menu
-        {
-            ID = 1,
-            Name = "foo",
-            Active = true,
-            RestaurantID = 1
-        };
+        private Menu SomeMenu;
+        private static readonly Restaurant ParentRestaurant = new Restaurant { Name = "foo" };
     }
 }

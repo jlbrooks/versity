@@ -5,7 +5,7 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
-namespace versity.ios
+namespace versity.mobile.ios
 {
     public class Application
     {

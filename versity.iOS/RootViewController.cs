@@ -4,7 +4,7 @@ using System.Drawing;
 using Foundation;
 using UIKit;
 
-namespace versity.ios
+namespace versity.mobile.ios
 {
     public partial class RootViewController : UIViewController
     {

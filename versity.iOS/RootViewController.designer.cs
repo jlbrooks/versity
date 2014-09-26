@@ -5,7 +5,7 @@
 //
 using Foundation;
 
-namespace versity.ios
+namespace versity.mobile.ios
 {
     [Register("RootViewController")]
     partial class RootViewController

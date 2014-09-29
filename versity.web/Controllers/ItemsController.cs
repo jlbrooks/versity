@@ -109,8 +109,8 @@ namespace versity.Controllers
         public JsonResult SearchBudget(decimal budget)
         {
             var items = _store.GetUnderPrice(budget);
-            var json = _jss.Serialize(items);
-            return new JsonResult { Data = items, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+            var translated = items.Select(x => new { ID = x.ID, Name = x.Name, Description = x.Description, MenuID = x.MenuID, Cost = x.Cost, Category = x.Category });
+            return new JsonResult { Data = translated, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 
         private readonly IItemStore _store;

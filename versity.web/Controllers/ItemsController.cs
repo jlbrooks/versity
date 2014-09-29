@@ -110,7 +110,7 @@ namespace versity.Controllers
         {
             var items = _store.GetUnderPrice(budget);
             var json = _jss.Serialize(items);
-            return new JsonResult { Data = items };
+            return new JsonResult { Data = items, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 
         private readonly IItemStore _store;

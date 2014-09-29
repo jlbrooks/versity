@@ -13,7 +13,7 @@ using System.Web.Script.Serialization;
 
 namespace versity.Controllers
 {
-    [Authorize]
+    
     public class ItemsController : Controller
     {
         public ItemsController(IItemStore store)
@@ -23,6 +23,7 @@ namespace versity.Controllers
         }
 
         // GET: Items/Details/5
+        [Authorize]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -38,6 +39,7 @@ namespace versity.Controllers
         }
 
         // GET: Items/Create
+        [Authorize]
         public ActionResult Create(int menuId)
         {
             var Item = new Item { MenuID = menuId };
@@ -49,6 +51,7 @@ namespace versity.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Create([Bind(Include = "ID,MenuID,Name,Cost,Category,Description")] Item item)
         {
             if (ModelState.IsValid)
@@ -61,6 +64,7 @@ namespace versity.Controllers
         }
 
         // GET: Items/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -80,6 +84,7 @@ namespace versity.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Edit([Bind(Include = "ID,MenuID,Name,Cost,Category,Description")] Item item)
         {
             if (ModelState.IsValid)
@@ -93,6 +98,7 @@ namespace versity.Controllers
         // POST: Items/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult DeleteConfirmed(int id)
         {
             Item item = _store.GetByItemID(id);

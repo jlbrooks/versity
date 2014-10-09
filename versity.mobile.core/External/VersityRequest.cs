@@ -31,6 +31,6 @@ namespace versity.mobile.core.External
 
 
         private const string baseUrl = "http://www.versitymenus.com";
-        private const string searchUrl = "SearchBudget";
+        private const string searchUrl = "/Items/SearchBudget";
     }
 }

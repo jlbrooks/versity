@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using versity.data.Models;
 using RestSharp;
+using Newtonsoft.Json;
 
 namespace versity.mobile.core.External
 {
@@ -14,19 +15,22 @@ namespace versity.mobile.core.External
     {
         public List<Item> GetItems (decimal budget) {
             client = new RestClient(baseUrl);
-            request = new RestRequest(searchUrl, Method.POST);
-            request.AddParameter("budget", budget);
+            request = new RestRequest(searchUrl, Method.GET);
+            request.AddParameter("Budget", budget);
 
             var response = client.Execute(request);
 
-            return null;
+            var items = JsonConvert.DeserializeObject<List<Item>>(response.Content);
+
+            return items;
         }
 
         private RestClient client;
         private RestRequest request;
         private IRestResponse response;
 
+
         private const string baseUrl = "http://www.versitymenus.com";
-        private const string searchUrl = "/SearchBudget";
+        private const string searchUrl = "SearchBudget";
     }
 }

@@ -26,16 +26,31 @@
         <dd>
             @Html.DisplayFor(model => model.PhoneNumber)
         </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Address)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Address)
-        </dd>
     </dl>
 </div>
+
+<div>
+    <h4>Locations</h4>
+    @Html.ActionLink("New Location", "Create", "Locations", new { restaurantId = Model.ID }, new { })
+    <table class="table-bordered">
+        <tr>
+            <th>Address</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Zip</th>
+        </tr>
+        @foreach (Location loc in Model.Locations)
+        {
+            <tr>
+                <td>@Html.ActionLink(@loc.Address, "Edit", "Locations", new { id = @loc.ID }, new { })</td>
+                <td>@loc.City</td>
+                <td>@loc.State</td>
+                <td>@loc.Zip</td>
+            </tr>
+        }
+    </table>
+</div>
+
 <div>
     <h4>Menus</h4>
     @Html.ActionLink("New Menu", "New", "Menus", new { restaurantId = Model.ID }, new { })
@@ -73,6 +88,7 @@
         }
     </table>
 </div>
+
 <p style="margin-top: 20px">
     @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
     @Html.ActionLink("Back to List", "Index")

@@ -50,6 +50,7 @@ namespace versity.App_Start
                 kernel.Bind<IMenuStore>().To<MenuStore>();
                 kernel.Bind<IItemStore>().To<ItemStore>();
                 kernel.Bind<IHoursStore>().To<HoursStore>();
+                kernel.Bind<ILocationStore>().To<LocationStore>();
 
                 RegisterServices(kernel);
                 return kernel;

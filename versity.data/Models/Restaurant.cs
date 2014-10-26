@@ -14,6 +14,7 @@ namespace versity.data.Models
         {
             Menus = new List<Menu>();
             Hours = new List<Hours>();
+            Locations = new List<Location>();
         }
 
         [Key]
@@ -26,11 +27,12 @@ namespace versity.data.Models
         [Display(Name = "Phone Number")]
         public string PhoneNumber { get; set; }
 
-        [Display(Name = "Address")]
         public string Address { get; set; }
 
         public virtual ICollection<Hours> Hours { get; set; }
 
         public virtual ICollection<Menu> Menus { get; set; }
+
+        public virtual ICollection<Location> Locations { get; set; }
     }
 }

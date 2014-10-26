@@ -124,9 +124,11 @@
     <Compile Include="DataAccess\HoursStore.cs" />
     <Compile Include="DataAccess\IHoursStore.cs" />
     <Compile Include="DataAccess\IItemStore.cs" />
+    <Compile Include="DataAccess\ILocationStore.cs" />
     <Compile Include="DataAccess\IMenuStore.cs" />
     <Compile Include="DataAccess\IRestaurantStore.cs" />
     <Compile Include="DataAccess\ItemStore.cs" />
+    <Compile Include="DataAccess\LocationStore.cs" />
     <Compile Include="DataAccess\MenuStore.cs" />
     <Compile Include="DataAccess\RestaurantStore.cs" />
     <Compile Include="DataAccess\EntityFramework\VersityDbContext.cs" />
@@ -138,7 +140,12 @@
     <Compile Include="Migrations\201408212202577_remove_categories_add_items.cs" />
     <Compile Include="Migrations\201409051734321_add_description_to_item.cs" />
     <Compile Include="Migrations\201409052205459_add_hours_to_restaurant.cs" />
+    <Compile Include="Migrations\201410262039421_add_location_to_restaurants.cs" />
+    <Compile Include="Migrations\201410262039421_add_location_to_restaurants.Designer.cs">
+      <DependentUpon>201410262039421_add_location_to_restaurants.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Location.cs" />
     <Compile Include="Models\Hours.cs" />
     <Compile Include="Models\Item.cs" />
     <Compile Include="Models\Menu.cs" />
@@ -146,6 +153,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Start\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201410262039421_add_location_to_restaurants.resx">
+      <DependentUpon>201410262039421_add_location_to_restaurants.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

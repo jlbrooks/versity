@@ -21,6 +21,7 @@ namespace versity.data.DataAccess.EntityFramework
         public DbSet<Menu> Menus { get; set; }
         public DbSet<Item> Items { get; set; }
         public DbSet<Hours> Hours { get; set; }
+        public DbSet<Location> Locations { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

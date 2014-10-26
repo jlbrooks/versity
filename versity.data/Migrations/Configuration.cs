@@ -5,6 +5,7 @@ namespace versity.data.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
     using versity.data.Models;
+    using System.Collections.Generic;
 
     public sealed class Configuration : DbMigrationsConfiguration<versity.data.DataAccess.EntityFramework.VersityDataContext>
     {
@@ -20,7 +21,7 @@ namespace versity.data.Migrations
                 {
                     Name = "Test Restaurant",
                     PhoneNumber = "123-456-7890",
-                    Address = "101010 Foo Avenue",
+                    Address = "test address, city STATE 97140",
                     ID = 1
                 });
         }

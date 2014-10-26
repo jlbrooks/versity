@@ -148,6 +148,10 @@
     <Compile Include="Migrations\201410262222189_add_lat_lng_to_location.Designer.cs">
       <DependentUpon>201410262222189_add_lat_lng_to_location.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201410262248458_remove_address_from_restaurant.cs" />
+    <Compile Include="Migrations\201410262248458_remove_address_from_restaurant.Designer.cs">
+      <DependentUpon>201410262248458_remove_address_from_restaurant.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\Hours.cs" />
@@ -164,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201410262222189_add_lat_lng_to_location.resx">
       <DependentUpon>201410262222189_add_lat_lng_to_location.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201410262248458_remove_address_from_restaurant.resx">
+      <DependentUpon>201410262248458_remove_address_from_restaurant.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

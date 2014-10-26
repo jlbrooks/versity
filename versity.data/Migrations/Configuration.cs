@@ -21,7 +21,6 @@ namespace versity.data.Migrations
                 {
                     Name = "Test Restaurant",
                     PhoneNumber = "123-456-7890",
-                    Address = "test address, city STATE 97140",
                     ID = 1
                 });
         }

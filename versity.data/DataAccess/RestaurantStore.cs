@@ -11,7 +11,7 @@ namespace versity.data.DataAccess
 {
     public class RestaurantStore : IRestaurantStore
     {
-        public RestaurantStore(VersityDbContext context)
+        public RestaurantStore(VersityDataContext context)
         {
             _context = context;
         }
@@ -53,6 +53,6 @@ namespace versity.data.DataAccess
             }
         }
 
-        private readonly VersityDbContext _context;
+        private readonly VersityDataContext _context;
     }
 }

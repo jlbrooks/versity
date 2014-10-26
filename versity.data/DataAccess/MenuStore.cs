@@ -11,7 +11,7 @@ namespace versity.data.DataAccess
 {
     public class MenuStore : IMenuStore
     {
-        public MenuStore(VersityDbContext context)
+        public MenuStore(VersityDataContext context)
         {
             _context = context;
         }
@@ -48,6 +48,6 @@ namespace versity.data.DataAccess
             }
         }
 
-        private readonly VersityDbContext _context;
+        private readonly VersityDataContext _context;
     }
 }

@@ -20,7 +20,7 @@ namespace versity
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<VersityDbContext, Configuration>());
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<VersityDataContext, Configuration>());
         }
     }
 }

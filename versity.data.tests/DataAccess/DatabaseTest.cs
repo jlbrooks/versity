@@ -29,9 +29,9 @@ namespace versity.data.tests.DataAccess
             GC.SuppressFinalize(this);
         }
 
-        protected VersityDbContext TestDbContext
+        protected VersityDataContext TestDbContext
         {
-            get { return Context as VersityDbContext; }
+            get { return Context as VersityDataContext; }
         }
 
         [SetUp]
@@ -50,7 +50,7 @@ namespace versity.data.tests.DataAccess
 
         protected virtual void CreateDbContext() 
         {
-            Context = new VersityDbContext();
+            Context = new VersityDataContext();
         }
 
         protected void SaveAndValidate()

@@ -11,6 +11,8 @@
     <AssemblyName>versity.data</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -119,32 +121,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201408160004004_initial.resx">
-      <DependentUpon>201408160004004_initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201408170049370_add_address_to_restaurant.resx">
-      <DependentUpon>201408170049370_add_address_to_restaurant.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201408171143095_restaurant_dataAnnotations.resx">
-      <DependentUpon>201408171143095_restaurant_dataAnnotations.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201408181950157_add_menus_to_restaurant.resx">
-      <DependentUpon>201408181950157_add_menus_to_restaurant.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201408210244456_add_categories_to_menu.resx">
-      <DependentUpon>201408210244456_add_categories_to_menu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201408212202577_remove_categories_add_items.resx">
-      <DependentUpon>201408212202577_remove_categories_add_items.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201409051734321_add_description_to_item.resx">
-      <DependentUpon>201409051734321_add_description_to_item.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201409052205459_add_hours_to_restaurant.resx">
-      <DependentUpon>201409052205459_add_hours_to_restaurant.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="DataAccess\HoursStore.cs" />
     <Compile Include="DataAccess\IHoursStore.cs" />
     <Compile Include="DataAccess\IItemStore.cs" />
@@ -154,37 +130,9 @@
     <Compile Include="DataAccess\MenuStore.cs" />
     <Compile Include="DataAccess\RestaurantStore.cs" />
     <Compile Include="DataAccess\EntityFramework\VersityDbContext.cs" />
-    <Compile Include="Migrations\201408160004004_initial.cs" />
-    <Compile Include="Migrations\201408160004004_initial.Designer.cs">
-      <DependentUpon>201408160004004_initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201408170049370_add_address_to_restaurant.cs" />
-    <Compile Include="Migrations\201408170049370_add_address_to_restaurant.Designer.cs">
-      <DependentUpon>201408170049370_add_address_to_restaurant.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201408171143095_restaurant_dataAnnotations.cs" />
-    <Compile Include="Migrations\201408171143095_restaurant_dataAnnotations.Designer.cs">
-      <DependentUpon>201408171143095_restaurant_dataAnnotations.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201408181950157_add_menus_to_restaurant.cs" />
-    <Compile Include="Migrations\201408181950157_add_menus_to_restaurant.Designer.cs">
-      <DependentUpon>201408181950157_add_menus_to_restaurant.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201408210244456_add_categories_to_menu.cs" />
-    <Compile Include="Migrations\201408210244456_add_categories_to_menu.Designer.cs">
-      <DependentUpon>201408210244456_add_categories_to_menu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201408212202577_remove_categories_add_items.cs" />
-    <Compile Include="Migrations\201408212202577_remove_categories_add_items.Designer.cs">
-      <DependentUpon>201408212202577_remove_categories_add_items.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201409051734321_add_description_to_item.cs" />
-    <Compile Include="Migrations\201409051734321_add_description_to_item.Designer.cs">
-      <DependentUpon>201409051734321_add_description_to_item.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201409052205459_add_hours_to_restaurant.cs" />
-    <Compile Include="Migrations\201409052205459_add_hours_to_restaurant.Designer.cs">
-      <DependentUpon>201409052205459_add_hours_to_restaurant.cs</DependentUpon>
+    <Compile Include="Migrations\201410261616139_init.cs" />
+    <Compile Include="Migrations\201410261616139_init.Designer.cs">
+      <DependentUpon>201410261616139_init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Hours.cs" />
@@ -195,7 +143,19 @@
   <ItemGroup>
     <Folder Include="App_Start\" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201410261616139_init.resx">
+      <DependentUpon>201410261616139_init.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

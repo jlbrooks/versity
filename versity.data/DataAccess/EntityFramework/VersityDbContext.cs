@@ -9,10 +9,10 @@ using versity.data.Models;
 
 namespace versity.data.DataAccess.EntityFramework
 {
-    public class VersityDbContext : DbContext
+    public class VersityDataContext : DbContext
     {
-        public VersityDbContext()
-            : base("VersityDbContext")
+        public VersityDataContext()
+            : base("VersityDataContext")
         {
 
         }

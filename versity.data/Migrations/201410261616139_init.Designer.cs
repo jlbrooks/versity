@@ -7,13 +7,13 @@ namespace versity.data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class add_categories_to_menu : IMigrationMetadata
+    public sealed partial class init : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(add_categories_to_menu));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(init));
         
         string IMigrationMetadata.Id
         {
-            get { return "201408210244456_add_categories_to_menu"; }
+            get { return "201410261616139_init"; }
         }
         
         string IMigrationMetadata.Source

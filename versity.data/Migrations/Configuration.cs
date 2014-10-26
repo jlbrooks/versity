@@ -6,14 +6,14 @@ namespace versity.data.Migrations
     using System.Linq;
     using versity.data.Models;
 
-    public sealed class Configuration : DbMigrationsConfiguration<versity.data.DataAccess.EntityFramework.VersityDbContext>
+    public sealed class Configuration : DbMigrationsConfiguration<versity.data.DataAccess.EntityFramework.VersityDataContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(versity.data.DataAccess.EntityFramework.VersityDbContext context)
+        protected override void Seed(versity.data.DataAccess.EntityFramework.VersityDataContext context)
         {
             context.Restaurants.AddOrUpdate(p => p.Name,
                 new Restaurant

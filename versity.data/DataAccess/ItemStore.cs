@@ -11,7 +11,7 @@ namespace versity.data.DataAccess
 {
     public class ItemStore : IItemStore
     {
-        public ItemStore(VersityDbContext context)
+        public ItemStore(VersityDataContext context)
         {
             _context = context;
         }
@@ -53,6 +53,6 @@ namespace versity.data.DataAccess
             return _context.Items.Where(x => x.Cost <= price).ToList();
         }
 
-        private readonly VersityDbContext _context;
+        private readonly VersityDataContext _context;
     }
 }

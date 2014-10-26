@@ -9,15 +9,17 @@ using System.Web.Mvc;
 using versity.data.DataAccess.EntityFramework;
 using versity.data.Models;
 using versity.data.DataAccess;
+using versity.External;
 
 namespace versity.Controllers
 {
     [Authorize]
     public class LocationsController : Controller
     {
-        public LocationsController(ILocationStore store)
+        public LocationsController(ILocationStore store, IGeocoder geocoder)
         {
             _store = store;
+            _geocoder = geocoder;
         }
 
         // GET: Locations/Create
@@ -34,6 +36,9 @@ namespace versity.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ID,RestaurantID,Address,City,State,Zip")] Location Location)
         {
+            var latlng = _geocoder.GeocodeAddress(Location.Address, Location.City, Location.State, Location.Zip);
+            Location.lat = latlng.Item1;
+            Location.lng = latlng.Item2;
             if (ModelState.IsValid)
             {
                 _store.Add(Location);
@@ -65,6 +70,9 @@ namespace versity.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ID,RestaurantID,Address,City,State,Zip")] Location Location)
         {
+            var latlng = _geocoder.GeocodeAddress(Location.Address, Location.City, Location.State, Location.Zip);
+            Location.lat = latlng.Item1;
+            Location.lng = latlng.Item2;
             if (ModelState.IsValid)
             {
                 _store.Update(Location);
@@ -82,5 +90,6 @@ namespace versity.Controllers
         }
 
         private readonly ILocationStore _store;
+        private readonly IGeocoder _geocoder;
     }
 }

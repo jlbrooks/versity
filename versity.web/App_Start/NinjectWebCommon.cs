@@ -12,6 +12,7 @@ namespace versity.App_Start
     using Ninject.Web.Common;
 
     using versity.data.DataAccess;
+    using versity.External;
 
     public static class NinjectWebCommon 
     {
@@ -51,6 +52,7 @@ namespace versity.App_Start
                 kernel.Bind<IItemStore>().To<ItemStore>();
                 kernel.Bind<IHoursStore>().To<HoursStore>();
                 kernel.Bind<ILocationStore>().To<LocationStore>();
+                kernel.Bind<IGeocoder>().To<Geocoder>();
 
                 RegisterServices(kernel);
                 return kernel;

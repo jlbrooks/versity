@@ -130,10 +130,14 @@
     <Compile Include="DataAccess\MenuStore.cs" />
     <Compile Include="DataAccess\RestaurantStore.cs" />
     <Compile Include="DataAccess\EntityFramework\VersityDbContext.cs" />
-    <Compile Include="Migrations\201410261616139_init.cs" />
-    <Compile Include="Migrations\201410261616139_init.Designer.cs">
-      <DependentUpon>201410261616139_init.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Migrations\201408160004004_initial.cs" />
+    <Compile Include="Migrations\201408170049370_add_address_to_restaurant.cs" />
+    <Compile Include="Migrations\201408171143095_restaurant_dataAnnotations.cs" />
+    <Compile Include="Migrations\201408181950157_add_menus_to_restaurant.cs" />
+    <Compile Include="Migrations\201408210244456_add_categories_to_menu.cs" />
+    <Compile Include="Migrations\201408212202577_remove_categories_add_items.cs" />
+    <Compile Include="Migrations\201409051734321_add_description_to_item.cs" />
+    <Compile Include="Migrations\201409052205459_add_hours_to_restaurant.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Hours.cs" />
     <Compile Include="Models\Item.cs" />
@@ -142,11 +146,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Start\" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201410261616139_init.resx">
-      <DependentUpon>201410261616139_init.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

@@ -10,7 +10,7 @@ namespace versity.data.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(versity.data.DataAccess.EntityFramework.VersityDataContext context)

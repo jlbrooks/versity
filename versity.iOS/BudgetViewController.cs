@@ -2,27 +2,28 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Runtime;
 
 using Foundation;
 using UIKit;
 
 using versity.data.Models;
-using versity.mobile.core.External;
+using Newtonsoft.Json;
 
 namespace versity.ios
 {
 	public partial class BudgetViewController : UIViewController
 	{
-		public BudgetViewController () : base ("BudgetViewController", null)
+		public BudgetViewController (IntPtr handle) : base (handle)
 		{
-			requester = new VersityRequest ();
+			requester = new VersityRequest (); 
 		}
 
 		public override void DidReceiveMemoryWarning ()
 		{
 			// Releases the view if it doesn't have a superview.
 			base.DidReceiveMemoryWarning ();
-			
+
 			// Release any cached data, images, etc that aren't in use.
 		}
 

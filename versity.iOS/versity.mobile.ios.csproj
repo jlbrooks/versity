@@ -91,6 +91,23 @@
     <Compile Include="ResultsViewController.designer.cs">
       <DependentUpon>ResultsViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="..\versity.iOS\External\VersityRequest.cs" />
+    <Compile Include="External\VersityRequest.cs" />
+    <Compile Include="..\versity.data\Models\Hours.cs">
+      <Link>Models\Hours.cs</Link>
+    </Compile>
+    <Compile Include="..\versity.data\Models\Item.cs">
+      <Link>Models\Item.cs</Link>
+    </Compile>
+    <Compile Include="..\versity.data\Models\Location.cs">
+      <Link>Models\Location.cs</Link>
+    </Compile>
+    <Compile Include="..\versity.data\Models\Menu.cs">
+      <Link>Models\Menu.cs</Link>
+    </Compile>
+    <Compile Include="..\versity.data\Models\Restaurant.cs">
+      <Link>Models\Restaurant.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="RootViewController.designer.cs">
@@ -106,12 +123,13 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
-    <Reference Include="versity.data">
-      <HintPath>..\versity.data\obj\Debug\versity.data.dll</HintPath>
+    <Reference Include="RestSharp.MonoTouch">
+      <HintPath>..\Components\restsharp-104.4.0.1\lib\ios-unified\RestSharp.MonoTouch.dll</HintPath>
     </Reference>
-    <Reference Include="versity.mobile.core">
-      <HintPath>..\versity.mobile.core\obj\Debug\versity.mobile.core.dll</HintPath>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\Components\json.net-4.5.11.1\lib\ios-unified\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -143,4 +161,18 @@
     </PropertyGroup>
     <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
   </Target>
+  <ItemGroup>
+    <XamarinComponentReference Include="restsharp">
+      <Version>104.4.0.1</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+    <XamarinComponentReference Include="json.net">
+      <Version>4.5.11.1</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="External\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
 </Project>

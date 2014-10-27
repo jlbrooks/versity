@@ -1,8 +1,29 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone4s.8.1" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="versity.ios/BudgetViewController.cs">
+    <Files>
+      <File FileName="versity.ios/AppDelegate.cs" Line="29" Column="29" />
+      <File FileName="versity.ios/BudgetViewController.cs" Line="22" Column="22" />
+      <File FileName="versity.ios/ResultsViewController.cs" Line="30" Column="30" />
+      <File FileName="versity.iOS/Main.cs" Line="1" Column="1" />
+      <File FileName="versity.ios/External/VersityRequest.cs" Line="2" Column="2" />
+      <File FileName="versity.data/Models/Hours.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True" selected="True">
+          <Node name="Mobile" expanded="True">
+            <Node name="versity.mobile.ios" expanded="True" />
+          </Node>
+          <Node name="Production" expanded="True" />
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="versity.ios/External/VersityRequest.cs" line="23" offsetX="300" offsetY="330" expression="response" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
 </Properties>

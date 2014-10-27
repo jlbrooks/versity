@@ -14,5 +14,6 @@ namespace versity.data.DataAccess
         void Update(Restaurant restaurant);
         void Add(Restaurant restaurant);
         void Remove(int id);
+        IList<Restaurant> HasItemUnderBudget(decimal budget);
     }
 }

@@ -106,13 +106,6 @@ namespace versity.Controllers
             return RedirectToAction("Details", "Menus", new { menuId = item.MenuID });
         }
 
-        public JsonResult SearchBudget(decimal budget)
-        {
-            var items = _store.GetUnderPrice(budget);
-            var translated = items.Select(x => new { ID = x.ID, Name = x.Name, Description = x.Description, MenuID = x.MenuID, Cost = x.Cost, Category = x.Category });
-            return new JsonResult { Data = translated, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
-        }
-
         private readonly IItemStore _store;
         private readonly JavaScriptSerializer _jss;
     }

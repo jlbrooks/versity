@@ -53,6 +53,21 @@ namespace versity.data.DataAccess
             }
         }
 
+        public IList<Restaurant> HasItemUnderBudget(decimal budget)
+        {
+            return All().Where(r => hasMenuUnderBudget(r, budget)).ToList();
+        }
+
+        private bool hasMenuUnderBudget(Restaurant r, decimal budget)
+        {
+            return r.Menus.Any(m => hasItemUnderPrice(m, budget));
+        }
+
+        private bool hasItemUnderPrice(Menu m, decimal budget)
+        {
+            return m.Items.Any(i => i.Cost <= budget);
+        }
+
         private readonly VersityDataContext _context;
     }
 }

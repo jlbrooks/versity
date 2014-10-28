@@ -32,7 +32,18 @@ namespace versity.Controllers
             var translated = restaurants.Select(r => mapRestaurant(r));
 
             return new JsonResult
+            {
+                Data = translated,
+                JsonRequestBehavior = JsonRequestBehavior.AllowGet
+            };
+        }
 
+        public JsonResult GetRestaurantById(int id)
+        {
+            var restaurant = _restaurantStore.GetByRestaurantID(id);
+            var translated = mapRestaurant(restaurant);
+
+            return new JsonResult
             {
                 Data = translated,
                 JsonRequestBehavior = JsonRequestBehavior.AllowGet

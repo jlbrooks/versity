@@ -42,12 +42,12 @@ namespace versity.ios
 			//Dismiss the keyboard
 			BudgetText.ResignFirstResponder ();
 
-			var items = requester.GetItems (budget);
+			var restaurants = requester.GetRestaurantsBudget (budget);
 
 			ResultsViewController results = this.Storyboard.InstantiateViewController ("ResultsViewController") as ResultsViewController;
 
 			if (results != null) {
-				results.Items = items;
+				results.Restaurants = restaurants;
 				this.NavigationController.PushViewController (results, true);
 			}
 		}

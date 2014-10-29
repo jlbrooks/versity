@@ -14,10 +14,18 @@ namespace versity.ios
 		}
 
 		public List<Item> GetItems (decimal budget) {
-			request = new RestRequest (budgetUrl, Method.GET);
+			request = new RestRequest (itemUrl, Method.GET);
 			request.AddParameter ("Budget", budget.ToString ());
 
 			IRestResponse<List<Item>> response = client.Execute<List<Item>> (request);
+
+			return response.Data;
+		}
+
+		public List<Restaurant> GetRestaurantsBudget(decimal budget) {
+			request = new RestRequest(restaurantUrl, Method.GET);
+			request.AddParameter ("budget", budget.ToString ());
+			IRestResponse<List<Restaurant>> response = client.Execute<List<Restaurant>> (request);
 
 			return response.Data;
 		}
@@ -26,7 +34,8 @@ namespace versity.ios
 		private RestRequest request;
 
 		private const string baseUrl = "http://www.versitymenus.com";
-		private const string budgetUrl = "Items/SearchBudget";
+		private const string itemUrl = "api/searchBudget";
+		private const string restaurantUrl = "api/GetRestaurantsWithBudget";
 	}
 }
 

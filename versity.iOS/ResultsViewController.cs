@@ -38,7 +38,7 @@ namespace versity.ios
 
 			public override nint RowsInSection (UITableView tableview, nint section)
 			{
-				return controller.Restaurants.Count;
+				return controller.Restaurants.Count * 4;
 			}
 
 			public override UITableViewCell GetCell (UITableView tableView, NSIndexPath indexPath)
@@ -77,7 +77,7 @@ namespace versity.ios
 			ContentView.BackgroundColor = UIColor.Red;
 
 			nameLabel = new UILabel () {
-				Font = UIFont.FromName("Cochin-BoldItalic", 18f),
+				Font = UIFont.FromName("Marker Felt", 18f),
 				TextColor = UIColor.Black
 			};
 

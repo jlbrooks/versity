@@ -27,10 +27,10 @@ namespace versity.data.Models
         [Display(Name = "Phone Number")]
         public string PhoneNumber { get; set; }
 
-        public virtual ICollection<Hours> Hours { get; set; }
+        public virtual List<Hours> Hours { get; set; }
 
-        public virtual ICollection<Menu> Menus { get; set; }
+        public virtual List<Menu> Menus { get; set; }
 
-        public virtual ICollection<Location> Locations { get; set; }
+        public virtual List<Location> Locations { get; set; }
     }
 }

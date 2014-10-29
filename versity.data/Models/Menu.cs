@@ -31,6 +31,6 @@ namespace versity.data.Models
         [Display(Name = "Active")]
         public bool Active { get; set; }
 
-        public virtual ICollection<Item> Items { get; set; }
+        public virtual List<Item> Items { get; set; }
     }
 }
